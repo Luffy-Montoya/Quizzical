@@ -103,7 +103,6 @@ export default function Quizzical() {
         setTimeout(() => {
         window.scrollTo({
             top: 0,
-            behavior: 'smooth'
             });
         }, 1);
     }
