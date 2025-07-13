@@ -229,6 +229,7 @@ export default function Quizzical() {
 
     return (
         <main>
+            <div className="background"></div>
             {!isStarted && startMenu}
             {(isStarted && questionsArray.length < 1) && loadingImage}
             {questionsArray.length > 0 && <section>
