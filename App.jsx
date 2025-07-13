@@ -156,7 +156,7 @@ export default function Quizzical() {
                 <option value="hard">Hard</option>
             </select>
             <button className="startButton" onClick={() => getQuestions()}>Start Quiz</button>
-            <img src="./images/black_loading.gif"/>
+            <img src="https://raw.githubusercontent.com/Luffy-Montoya/quizzical/refs/heads/main/images/black_loading.gif"/>
         </form>
 
     const categories = {
@@ -216,7 +216,7 @@ export default function Quizzical() {
 
     const loadingImage = 
         <div className="loadingContainer">
-            <img src="./images/black_loading.gif"/>
+            <img src="https://raw.githubusercontent.com/Luffy-Montoya/quizzical/refs/heads/main/images/black_loading.gif"/>
         </div>
 
     let resultsMessage = "Great job!"
