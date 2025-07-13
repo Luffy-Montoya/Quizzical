@@ -86,6 +86,8 @@ section {
     max-width: 9em;
     display: flex;
     background-color: white;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
 }
 
 hr {
