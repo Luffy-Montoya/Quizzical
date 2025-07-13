@@ -6,18 +6,26 @@ html {
 }
 
 body {
-    background: linear-gradient(
-        rgb(200,200,245,.15),
-        rgb(200,200,245,.15)
-    ),
-        url("./simple-flipped.jpg");
-    background-size: 100% 100%;
-    background-attachment: fixed;
     display: flex;
     justify-content: center;
     font-family: "Karla";
     box-sizing: border-box;
     color: rgb(50,50, 100)
+}
+
+.background {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; 
+    height: 100vh;
+    background: linear-gradient(
+        rgb(200,200,245,.15),
+        rgb(200,200,245,.15)
+    ),
+        url("./simple-flipped.jpg") 
+        center / cover no-repeat;
+    background-size: 100% 100%;
+    z-index: -1;
 }
 
 main {
