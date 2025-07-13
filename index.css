@@ -10,7 +10,7 @@ body {
     justify-content: center;
     font-family: "Karla";
     box-sizing: border-box;
-    color: rgb(50,50,100)
+    color: rgb(65,65,115)
 }
 
 .background {
@@ -171,7 +171,7 @@ select {
     border: 1px solid rgb(50,50,150, .5);
     margin-top: -.75em;
     font-size: .9rem;
-    color: rgb(50,50,125);
+    color: rgb(75,75,135);
     background-color: white;
 }
 
