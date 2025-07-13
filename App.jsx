@@ -63,7 +63,7 @@ export default function Quizzical() {
         setTimeout(() => {
         window.scrollTo({
             top: document.documentElement.scrollHeight,
-            behavior: "smooth"
+            behavior: 'smooth'
             });
         }, 1);
 
@@ -224,8 +224,29 @@ export default function Quizzical() {
         <div className="loadingContainer">
             <img src="./images/black_loading.gif"/>
         </div>
+    let percentage = Math.round((userCorrectAnswers.length/questionsArray.length) * 100)
+    let resultsMessage 
 
-    let resultsMessage = "Great job!"
+    if(percentage === 100){
+        resultsMessage = "Perfect score!  Amazing job!"
+    } else if(percentage > 84) {
+        resultsMessage = "Only one wrong.  Impressive!"
+    } else if(percentage > 69) {
+        resultsMessage = "Smarter than the average bear!"
+    } else if(percentage > 59) {
+        resultsMessage = '"Two outta three ain\'t bad." -Meatloaf'
+    } else if(percentage > 50) {
+        resultsMessage = "More than half is a majority!"
+    } else if(percentage > 39) {
+        resultsMessage = "Man, quizzes are hard."
+    } else if(percentage > 24) {
+        resultsMessage = "Ehh... You win some, you lose some."
+    } else if(percentage > 9) {
+        resultsMessage = "It's okay.  Nobody's perfect."
+    } else { 
+        resultsMessage = '"Trying is the first step to failure."  -Homer Simpson'
+    }
+    
 
     return (
         <main>
@@ -239,6 +260,7 @@ export default function Quizzical() {
                 </div>         
                 {!isQuizOver && <button className="newQuiz" onClick={() => seeCorrectAnswers()}>Check Answers</button>}
                 {isQuizOver && <div className="summary">You answered <b>{userCorrectAnswers.length}/{questionsArray.length}</b> questions correctly.</div>}
+                {isQuizOver && <div className="message"><b>{percentage}%</b></div>}
                 {isQuizOver && <div className="message">{resultsMessage}</div>}
                 {isQuizOver && <button className="newQuiz" onClick={() => startOver()}>New Quiz</button>}
             </section>}
