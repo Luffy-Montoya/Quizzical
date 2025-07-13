@@ -150,6 +150,7 @@ option{
 }
 
 select {
+    appearance: none;
     text-align: center;
     text-align-last: center;
     padding: 3px 0;
