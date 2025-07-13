@@ -1,0 +1,211 @@
+
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    background:linear-gradient(
+        rgb(200,200,245,.15),
+        rgb(200,200,245,.15)
+    ),
+        url("./simple-flipped.jpg");
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    font-family: "Karla";
+    box-sizing: border-box;
+    color: rgb(50,50, 100)
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.loadingContainer {
+    height: 75vh;
+    width: 75vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    height: 3em;
+    width: 3em;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quiz {
+    display: flex;
+    flex-direction: column;
+    margin-top: .5em;
+}
+
+.questionsContainer {
+    border-bottom: 1px solid rgb(50,50,125,.15)
+}
+
+.questionsContainer > p {
+    display: flex;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: .75em;
+    margin-bottom: .75em
+}
+
+.answersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 1.25em;
+}
+
+.answer {
+    cursor: pointer;
+    border: 1px solid rgb(50,50,125,.15);
+    padding: 5px 15px;
+    border-radius: 2em;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    max-width: 9em;
+    display: flex;
+    background-color: white;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: rgb(220,220,220);
+    
+}
+
+.selected {
+    background-color: rgb(235,235,255);
+    border: 1px solid rgb(195,195,235);
+}
+
+.correct {
+    font-weight: bold;
+    background-color: rgb(190,255,200,.6);
+    border: 1px solid rgb(125,200,125,.6);
+    color: rgb(0,100,75,.6);
+    transition: 1.25s;
+}
+
+.selectedCorrect {
+    background-color: rgb(190,255,200);
+    border: 1px solid rgb(125,200,125);
+    color: rgb(0,100,75);
+    box-shadow: 0 1px 1px rgb(50,100,50,.5);
+    transition: 1.25s;
+}
+
+.selectedWrong {
+    background: rgb(255,200,200);
+    border: 1px solid rgb(225,175,175);
+    color: rgb(165,90,90);
+    font-weight: bold;
+    transition: 1.25s;
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+form {
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+form > p{
+    margin: 0;
+}
+
+option{
+    text-align: center;
+    border: 1px solid black;
+}
+
+select {
+    appearance: none;
+    padding: 3px 2px 3px 0;
+    width: 7.5em;
+    border-radius: 2em;
+    border: 1px solid rgb(50,50,150, .5);
+    margin-top: -.75em;
+    font-size: .9rem;
+    color: rgb(50,50,125);
+}
+
+.numberOfQuestions {
+    max-width: 4em;
+}
+
+.difficulty {
+    max-width: 6em;
+}
+
+button {
+    cursor: pointer;
+    border-radius: 2em;
+    border: none;
+    padding: 13px 23px;
+    font-size: 1rem;
+    background-color: rgb(100,100,175);
+    color: white;
+}
+
+.startButton {
+    justify-self: center;
+    margin-top: .75em;
+}
+
+h1 {
+    margin: 0;
+    opacity: 95%;
+}
+
+.title {
+    color: rgb(50,50,125)z;
+    text-shadow: 0px 0px 3px rgb(175,175,235);
+    margin-top: 1.5em;
+}
+
+.category {
+    margin-top: .65em;
+}
+
+.summary {
+    margin-top: 1em;
+}
+
+.message {
+    margin-top: .5em;
+}
+
+.newQuiz {
+    margin-top: 1.25em;
+    margin-bottom: 4em;
+}
+
