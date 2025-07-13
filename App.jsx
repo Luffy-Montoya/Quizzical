@@ -215,7 +215,7 @@ export default function Quizzical() {
 
     const loadingImage = 
         <div className="loadingContainer">
-            <img src="./black_loading.gif"></img>
+            <img src="/black_loading.gif"></img>
         </div>
 
     let resultsMessage = "Great job!"
