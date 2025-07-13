@@ -153,13 +153,14 @@ select {
     appearance: none;
     text-align: center;
     text-align-last: center;
-    padding: 3px 0;
+    padding: 5px 0;
     width: 7.5em;
     border-radius: 2em;
     border: 1px solid rgb(50,50,150, .5);
     margin-top: -.75em;
     font-size: .9rem;
     color: rgb(50,50,125);
+    background-color: white;
 }
 
 .numberOfQuestions {
@@ -215,7 +216,6 @@ h1 {
 
 @media (min-width: 500px) {
     select{
-        appearance: none;
-        padding: 3px 2px 3px 0;
+        padding: 5px 2px 5px 0;
     }
 }
