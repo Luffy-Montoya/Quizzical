@@ -230,7 +230,7 @@ export default function Quizzical() {
     if(percentage === 100){
         resultsMessage = "Perfect score!  Amazing job!"
     } else if(percentage > 84) {
-        resultsMessage = "Only one wrong.  Impressive!"
+        resultsMessage = "Only missed one.  Impressive!"
     } else if(percentage > 69) {
         resultsMessage = "Smarter than the average bear!"
     } else if(percentage > 59) {
