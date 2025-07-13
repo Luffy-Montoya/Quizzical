@@ -99,6 +99,13 @@ export default function Quizzical() {
         setUserCorrectAnswers([])
         setIsQuizOver(false)
         setIsStarted(false)
+
+        setTimeout(() => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+            });
+        }, 1);
     }
 
     const numberChange = e => {
