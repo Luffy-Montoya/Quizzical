@@ -46,7 +46,7 @@ main {
 img {
     height: 3em;
     width: 3em;
-    filter: sepia(100%) hue-rotate(195deg);
+    filter: sepia(80%) hue-rotate(195deg);
 }
 
 section {
