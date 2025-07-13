@@ -50,6 +50,7 @@ section {
     display: flex;
     flex-direction: column;
     margin-top: .5em;
+    margin-bottom: .5em;
 }
 
 .questionsContainer {
@@ -194,7 +195,7 @@ h1 {
 .title {
     color: rgb(50,50,125)z;
     text-shadow: 0px 0px 3px rgb(175,175,235);
-    margin-top: 3em;
+    margin-top: 3.5em;
 }
 
 .category {
