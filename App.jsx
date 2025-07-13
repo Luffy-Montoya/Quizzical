@@ -156,7 +156,7 @@ export default function Quizzical() {
                 <option value="hard">Hard</option>
             </select>
             <button className="startButton" onClick={() => getQuestions()}>Start Quiz</button>
-            <img src="/images/black_loading.gif"></img>
+            <img src="./images/black_loading.gif"></img>
         </form>
 
     const categories = {
