@@ -12,15 +12,35 @@ export default function Quizzical() {
     const [userCorrectAnswers, setUserCorrectAnswers] = useState([])
     const [isQuizOver, setIsQuizOver] = useState(false)
     const [isStarted, setIsStarted] = useState(false)
+    const [tooManyQuestions, setIsTooManyQuestions] = useState(false)
+    const [isError, setIsError] = useState(false)
     const [numberOf, setNumberOf] = useState("5")
     const [category, setCategory] = useState("9")
     const [difficulty, setDifficulty] = useState("easy")
 
     async function getQuestions() {
         setIsStarted(true)
+        setIsTooManyQuestions(false)
+        setIsError(false)
         const questionsRes = await fetch(`https://opentdb.com/api.php?amount=${numberOf}&category=${category}&difficulty=${difficulty}&type=multiple`)
+        if (questionsRes.status === 429) {
+            setIsStarted(false)
+            setIsError(true)
+        }
+
+        if (!questionsRes.ok) {
+            throw new Error
+        }
+
         const questionsData = await questionsRes.json()
         setQuestionsArray(questionsData.results)
+
+        await new Promise(resolve => setTimeout(resolve, 2500))
+
+        if (questionsData.results.length < 1) {
+            setIsTooManyQuestions(true)
+            setIsStarted(false)
+        }
     }
 
     useEffect(() => {
@@ -280,6 +300,11 @@ export default function Quizzical() {
         <main>
             <div className="background"></div>
             {!isStarted && startMenu}
+            {(!isStarted && tooManyQuestions) && <div className="tooMany">
+                    <div>Database doesn't have enough {difficulty} {categories[category]} questions.</div>
+                    <div>Please select fewer questions.</div>
+                </div>}
+            {(!isStarted && isError) && <div className="isError">Too many requests.  Please wait 5 seconds and try again.</div>}
             {(isStarted && questionsArray.length < 1) && loadingImage}
             {questionsArray.length > 0 && <section>
                 <h1 className="category">{categories[category]}</h1>
