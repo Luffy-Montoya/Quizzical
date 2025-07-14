@@ -301,7 +301,7 @@ export default function Quizzical() {
             <div className="background"></div>
             {!isStarted && startMenu}
             {(!isStarted && tooManyQuestions) && <div className="tooMany">
-                    <div>Database doesn't have enough {difficulty} {categories[category]} questions.</div>
+                    <div>Database doesn't have enough {difficulty} questions about {categories[category]}.</div>
                     <div>Please select fewer questions.</div>
                 </div>}
             {(!isStarted && isError) && <div className="tooMany">
