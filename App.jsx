@@ -91,7 +91,6 @@ export default function Quizzical() {
     }
 
     function startOver() {
-        console.log("This is the category " + categories.category)
         setQuestionsArray([])
         setSelectedAnswers([])
         setQuizArray([])
@@ -121,7 +120,7 @@ export default function Quizzical() {
     }
 
     const startMenu =
-        <form>
+        <div className="form">
             <h1 className="title">Quizzical</h1>
             <p>Category</p>
             <select defaultValue={category} onChange={categoryChange}>
@@ -163,7 +162,7 @@ export default function Quizzical() {
                 <option value="hard">Hard</option>
             </select>
             <button className="startButton" onClick={() => getQuestions()}>Start Quiz</button>
-        </form>
+        </div>
 
     const categories = {
         27: "Animals",
@@ -260,7 +259,7 @@ export default function Quizzical() {
                 </div>         
                 {!isQuizOver && <button className="newQuiz" onClick={() => seeCorrectAnswers()}>Check Answers</button>}
                 {isQuizOver && <div className="summary">You answered <b>{userCorrectAnswers.length}/{questionsArray.length}</b> questions correctly.</div>}
-                {isQuizOver && <div className="message"><b>{percentage}%</b></div>}
+                {isQuizOver && <div className="message">Score: <b>{percentage}%</b></div>}
                 {isQuizOver && <div className="message">{resultsMessage}</div>}
                 {isQuizOver && <button className="newQuiz" onClick={() => startOver()}>New Quiz</button>}
             </section>}
