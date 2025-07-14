@@ -236,7 +236,12 @@ export default function Quizzical() {
         "It's okay.  I still love you."
     ]
 
-    let zeroRoll = Math.floor(Math.random() * zeroMessages.length)
+    function rollZero() {
+        let zeroRoll = Math.floor(Math.random() * zeroMessages.length)
+        let newMessage = zeroMessages[zeroRoll]
+
+        return newMessage
+    }
 
     let belowFifty = [
         "Man, quizzes are hard.",
@@ -245,7 +250,12 @@ export default function Quizzical() {
         "These streets can be rough."
     ]
 
-    let belowFiftyRoll = Math.floor(Math.random() * belowFifty.length)
+    function rollBelowFifty(){
+        let belowFiftyRoll = Math.floor(Math.random() * belowFifty.length)
+        let newMessage = belowFifty[belowFiftyRoll]
+
+        return newMessage
+    }
 
     let resultsMessage
 
@@ -260,9 +270,9 @@ export default function Quizzical() {
     } else if(percentage > 50) {
         resultsMessage = "More than half is a majority!"
     } else if(percentage > 9) {
-        resultsMessage = belowFifty[belowFiftyRoll]
+        resultsMessage = rollBelowFifty()
     } else { 
-        resultsMessage = zeroMessages[zeroRoll]
+        resultsMessage = rollZero()
     }
     
 
