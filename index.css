@@ -200,6 +200,7 @@ button {
 .startButton {
     justify-self: center;
     margin-top: .75em;
+    margin-bottom: 1.5em;
 }
 
 h1 {
@@ -232,6 +233,19 @@ h1 {
 .newQuiz {
     margin-top: 1.25em;
     margin-bottom: 6em;
+}
+
+.tooMany {
+    justify-items: center;
+    font-size: 1.1rem;
+}
+
+.tooMany > div {
+    margin-bottom: .25em;
+}
+
+.isError {
+    font-size: 1.1rem;
 }
 
 @media (min-width: 500px) {
