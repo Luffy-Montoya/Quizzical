@@ -238,11 +238,20 @@ export default function Quizzical() {
 
     let zeroRoll = Math.floor(Math.random() * zeroMessages.length)
 
+    let belowFifty = [
+        "Man, quizzes are hard.",
+        "Ehh... You win some, you lose some.",
+        "Nobody's perfect.",
+        "These streets can be rough."
+    ]
+
+    let belowFiftyRoll = Math.floor(Math.random() * belowFifty.length)
+
     let resultsMessage
 
     if(percentage === 100){
         resultsMessage = "Perfect score!  Amazing job!"
-    } else if(percentage > 84) {
+    } else if(percentage > 81) {
         resultsMessage = "Only missed one.  Impressive!"
     } else if(percentage > 69) {
         resultsMessage = "Better than average is better than most!"
@@ -250,12 +259,8 @@ export default function Quizzical() {
         resultsMessage = '"Two outta three ain\'t bad." -Meatloaf'
     } else if(percentage > 50) {
         resultsMessage = "More than half is a majority!"
-    } else if(percentage > 39) {
-        resultsMessage = "Man, quizzes are hard."
-    } else if(percentage > 24) {
-        resultsMessage = "Ehh... You win some, you lose some."
     } else if(percentage > 9) {
-        resultsMessage = "Nobody's perfect."
+        resultsMessage = belowFifty[belowFiftyRoll]
     } else { 
         resultsMessage = zeroMessages[zeroRoll]
     }
