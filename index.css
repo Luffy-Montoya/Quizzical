@@ -225,6 +225,7 @@ h1 {
 
 .message {
     margin-top: .5em;
+    text-align: center;
     text-wrap: balance;
 }
 
