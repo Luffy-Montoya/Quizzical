@@ -241,7 +241,7 @@ h1 {
 }
 
 .tooMany > div {
-    margin-bottom: .5em;
+    margin-bottom: .75em;
     text-align: center;
     text-wrap: balance;
 }
