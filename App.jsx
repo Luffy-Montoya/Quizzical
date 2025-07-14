@@ -224,14 +224,28 @@ export default function Quizzical() {
             <img src="./images/black_loading.gif"/>
         </div>
     let percentage = Math.round((userCorrectAnswers.length/questionsArray.length) * 100)
-    let resultsMessage 
+
+    let zeroMessages = [
+        '"Trying is the first step to failure." -Homer Simpson',
+        "Well... You gave it your best shot",
+        "I'm just not sure what to say...",
+        "We'll just keep this between you and me.",
+        "Well, at least you're pretty...",
+        '"You miss all the shots you don\'t take." -Michael Jordan',
+        "It's okay.  You don't have to be the best at everything.",
+        "It's okay.  I still love you."
+    ]
+
+    let zeroRoll = Math.floor(Math.random() * zeroMessages.length)
+
+    let resultsMessage
 
     if(percentage === 100){
         resultsMessage = "Perfect score!  Amazing job!"
     } else if(percentage > 84) {
         resultsMessage = "Only missed one.  Impressive!"
     } else if(percentage > 69) {
-        resultsMessage = "Smarter than the average bear!"
+        resultsMessage = "Better than average is better than most!"
     } else if(percentage > 59) {
         resultsMessage = '"Two outta three ain\'t bad." -Meatloaf'
     } else if(percentage > 50) {
@@ -241,9 +255,9 @@ export default function Quizzical() {
     } else if(percentage > 24) {
         resultsMessage = "Ehh... You win some, you lose some."
     } else if(percentage > 9) {
-        resultsMessage = "It's okay.  Nobody's perfect."
+        resultsMessage = "Nobody's perfect."
     } else { 
-        resultsMessage = '"Trying is the first step to failure."  -Homer Simpson'
+        resultsMessage = zeroMessages[zeroRoll]
     }
     
 
