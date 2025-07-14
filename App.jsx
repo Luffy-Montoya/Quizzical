@@ -304,7 +304,10 @@ export default function Quizzical() {
                     <div>Database doesn't have enough {difficulty} {categories[category]} questions.</div>
                     <div>Please select fewer questions.</div>
                 </div>}
-            {(!isStarted && isError) && <div className="isError">Too many requests.  Please wait 5 seconds and try again.</div>}
+            {(!isStarted && isError) && <div className="tooMany">
+                    <div>Too many requests.</div>
+                    <div>Please wait 5 seconds and try again.</div>
+                </div>}
             {(isStarted && questionsArray.length < 1) && loadingImage}
             {questionsArray.length > 0 && <section>
                 <h1 className="category">{categories[category]}</h1>
