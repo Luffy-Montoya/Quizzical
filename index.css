@@ -242,6 +242,8 @@ h1 {
 
 .tooMany > div {
     margin-bottom: .5em;
+    text-align: center;
+    text-wrap: balance;
 }
 
 @media (min-width: 500px) {
