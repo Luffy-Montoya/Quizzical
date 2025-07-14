@@ -126,7 +126,7 @@ hr {
     background-color: rgb(190,255,200);
     border: 1px solid rgb(125,200,125);
     color: rgb(0,100,75);
-    box-shadow: 0 1px 1px rgb(50,100,50,.5);
+    box-shadow: 0 1px 3px rgb(0,0,0,.25);
     transition: 1.25s;
 }
 
