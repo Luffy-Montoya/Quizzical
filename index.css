@@ -267,4 +267,12 @@ h1 {
     .startButton {
         margin-bottom: .5em;
     }
+
+    .tooMany {
+        margin-bottom: .5em;
+    }
+
+    .tooMany > div {
+    margin-bottom: .5em;
+    }
 }
