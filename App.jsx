@@ -20,7 +20,6 @@ export default function Quizzical() {
     const [startMenuVisible, setStartMenuVisible] = useState(false)
     const [quizVisible, setQuizVisible] = useState(false)
 
-
     async function getQuestions() {
         setIsStarted(true)
         setIsTooManyQuestions(false)
@@ -319,7 +318,6 @@ export default function Quizzical() {
     } else { 
         resultsMessage = rollZero()
     }
-    
 
     return (
         <main>
@@ -352,6 +350,5 @@ export default function Quizzical() {
             </section>}
 
         </main>
-
     )
 }
