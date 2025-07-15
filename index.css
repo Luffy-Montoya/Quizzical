@@ -282,7 +282,7 @@ h1 {
 
      .questionsContainer > p {
         font-size: 18px;
-        text-wrap: none;
+        text-wrap: nowrap;
     }
 }
 
