@@ -277,13 +277,13 @@ h1 {
     }
 
     .newQuiz {
-        margin-bottom: 1em;
+        margin-bottom: 2em;
     }
 }
 
 @media (orientation: landscape) and (max-width: 600px) {
-  .questionsContainer > p {
-    font-size: 1.1rem;
-  }
+    .questionsContainer > p {
+        font-size: 1.1rem;
+    }
 }
 
