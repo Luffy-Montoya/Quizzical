@@ -273,6 +273,11 @@ h1 {
     }
 
     .tooMany > div {
-    margin-bottom: .5em;
+        margin-bottom: .5em;
     }
+
+    .newQuiz {
+        margin-bottom: 2em;
+    }
+}
 }
