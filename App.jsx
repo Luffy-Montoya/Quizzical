@@ -17,11 +17,15 @@ export default function Quizzical() {
     const [numberOf, setNumberOf] = useState("5")
     const [category, setCategory] = useState("9")
     const [difficulty, setDifficulty] = useState("easy")
+    const [startMenuVisible, setStartMenuVisible] = useState(false)
+    const [quizVisible, setQuizVisible] = useState(false)
+
 
     async function getQuestions() {
         setIsStarted(true)
         setIsTooManyQuestions(false)
         setIsError(false)
+        setStartMenuVisible(false)
         const questionsRes = await fetch(`https://opentdb.com/api.php?amount=${numberOf}&category=${category}&difficulty=${difficulty}&type=multiple`)
         if (questionsRes.status === 429) {
             setIsStarted(false)
@@ -118,6 +122,7 @@ export default function Quizzical() {
         setUserCorrectAnswers([])
         setIsQuizOver(false)
         setIsStarted(false)
+        setQuizVisible(false)
 
         setTimeout(() => {
         window.scrollTo({
@@ -139,8 +144,16 @@ export default function Quizzical() {
         setDifficulty(e.target.value)
     }
 
+    useEffect(() => {
+        if (!isStarted) {
+            setTimeout(() => {
+                setStartMenuVisible(true)
+            }, 100)
+        }
+    }, [isStarted])
+
     const startMenu =
-        <div className="form">
+        <div className={clsx("form", { "visible": startMenuVisible })}>
             <h1 className="title">Quizzical</h1>
             <p>Category</p>
             <select defaultValue={category} onChange={categoryChange}>
@@ -204,6 +217,14 @@ export default function Quizzical() {
         28: "Vehicles",
         15: "Video Games",
     };
+
+    useEffect(() => {
+        if (questionsArray.length > 0) {
+            setTimeout(() => {
+                setQuizVisible(true)
+            }, 100)
+        }
+    }, [questionsArray])
     
     const quizArrayMap = quizArray.map((data, index) => {
         
@@ -298,8 +319,11 @@ export default function Quizzical() {
 
     return (
         <main>
+
             <div className="background"></div>
+
             {!isStarted && startMenu}
+
             {(!isStarted && tooManyQuestions) && <div className="tooMany">
                     <div>Database doesn't have enough {difficulty} questions about {categories[category]}.</div>
                     <div>Please select fewer questions.</div>
@@ -308,8 +332,10 @@ export default function Quizzical() {
                     <div>Too many requests.</div>
                     <div>Please wait 5 seconds and try again.</div>
                 </div>}
+
             {(isStarted && questionsArray.length < 1) && loadingImage}
-            {questionsArray.length > 0 && <section>
+
+            {questionsArray.length > 0 && <section className={clsx({ "visible": quizVisible })}>
                 <h1 className="category">{categories[category]}</h1>
                 <div className="quiz">
                     {quizArrayMap}
@@ -320,6 +346,7 @@ export default function Quizzical() {
                 {isQuizOver && <div className="message">{resultsMessage}</div>}
                 {isQuizOver && <button className="newQuiz" onClick={() => startOver()}>New Quiz</button>}
             </section>}
+
         </main>
 
     )
