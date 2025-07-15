@@ -281,7 +281,7 @@ h1 {
     }
 
      .questionsContainer > p {
-    font-size: 1rem;
+        text-wrap: pretty;
     }
 }
 
