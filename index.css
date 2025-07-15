@@ -282,6 +282,7 @@ h1 {
 
      .questionsContainer > p {
         font-size: 18px;
+        color: pink;
     }
 }
 
