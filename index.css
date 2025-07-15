@@ -279,5 +279,9 @@ h1 {
     .newQuiz {
         margin-bottom: 1em;
     }
+
+     .questionsContainer > p {
+    font-size: 1rem;
+    }
 }
 
