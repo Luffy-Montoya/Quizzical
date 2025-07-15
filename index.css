@@ -279,9 +279,11 @@ h1 {
     .newQuiz {
         margin-bottom: 1em;
     }
+}
 
-     .questionsContainer > p {
-       
-    }
+@media (orientation: landscape) and (max-width: 600px) {
+  .questionsContainer > p {
+    font-size: 1.1rem;
+  }
 }
 
