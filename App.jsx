@@ -304,7 +304,7 @@ export default function Quizzical() {
     } else if(percentage > 80) {
         resultsMessage = "Only missed one.  Impressive!"
     } else if(percentage === 80) {
-        resultsMessage = "Pretty good!"
+        resultsMessage = "Pretty good, my friend!"
     } else if(percentage > 70) {
         resultsMessage = "Better than average is better than most!"
     } else if(percentage === 70) {
