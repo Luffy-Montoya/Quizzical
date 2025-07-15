@@ -302,10 +302,14 @@ export default function Quizzical() {
 
     if(percentage === 100){
         resultsMessage = "Perfect score!  Amazing job!"
-    } else if(percentage > 81) {
+    } else if(percentage > 80) {
         resultsMessage = "Only missed one.  Impressive!"
-    } else if(percentage > 69) {
+    } else if(percentage === 80) {
+        resultsMessage = "Pretty good!"
+    } else if(percentage > 70) {
         resultsMessage = "Better than average is better than most!"
+    } else if(percentage === 70) {
+        resultsMessage = "Not bad at all!"
     } else if(percentage > 59) {
         resultsMessage = '"Two outta three ain\'t bad." -Meatloaf'
     } else if(percentage > 50) {
