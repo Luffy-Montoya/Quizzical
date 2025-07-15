@@ -26,6 +26,7 @@ export default function Quizzical() {
         setIsError(false)
         setStartMenuVisible(false)
         const questionsRes = await fetch(`https://opentdb.com/api.php?amount=${numberOf}&category=${category}&difficulty=${difficulty}&type=multiple`)
+        
         if (questionsRes.status === 429) {
             setIsStarted(false)
             setIsError(true)
@@ -89,7 +90,6 @@ export default function Quizzical() {
             behavior: 'smooth'
             });
         }, 1);
-
     }
     
     function getAllAnswers(incorrectArray, correctAnswer) {
@@ -341,12 +341,16 @@ export default function Quizzical() {
                 <h1 className="category">{categories[category]}</h1>
                 <div className="quiz">
                     {quizArrayMap}
-                </div>         
+                </div>
+
                 {!isQuizOver && <button className="newQuiz" onClick={() => seeCorrectAnswers()}>Check Answers</button>}
-                {isQuizOver && <div className="summary">You answered <b>{userCorrectAnswers.length}/{questionsArray.length}</b> questions correctly.</div>}
-                {isQuizOver && <div className="message">Score: <b>{percentage}%</b></div>}
-                {isQuizOver && <div className="message">{resultsMessage}</div>}
-                {isQuizOver && <button className="newQuiz" onClick={() => startOver()}>New Quiz</button>}
+
+                {isQuizOver && <div className="resultsContainer">
+                    <div className="summary">You answered <b>{userCorrectAnswers.length}/{questionsArray.length}</b> questions correctly.</div>
+                    <div className="message">Score: <b>{percentage}%</b></div>
+                    <div className="message">{resultsMessage}</div>
+                    <button className="newQuiz" onClick={() => startOver()}>New Quiz</button>
+                </div>}
             </section>}
 
         </main>
