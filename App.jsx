@@ -313,6 +313,8 @@ export default function Quizzical() {
         resultsMessage = '"Two outta three ain\'t bad." -Meatloaf'
     } else if(percentage > 50) {
         resultsMessage = "More than half is a majority!"
+    } else if(percentage === 50) {
+        resultsMessage = "The glass is definitely half full."
     } else if(percentage > 9) {
         resultsMessage = rollBelowFifty()
     } else { 
