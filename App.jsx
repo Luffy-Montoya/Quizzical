@@ -288,6 +288,7 @@ export default function Quizzical() {
         "Ehh... You win some, you lose some.",
         "Nobody's perfect.",
         "These streets can be rough."
+        "The struggle is real."
     ]
 
     function rollBelowFifty(){
