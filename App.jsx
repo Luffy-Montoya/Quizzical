@@ -287,7 +287,7 @@ export default function Quizzical() {
         "Man, quizzes are hard.",
         "Ehh... You win some, you lose some.",
         "Nobody's perfect.",
-        "These streets can be rough."
+        "These streets can be rough.",
         "The struggle is real."
     ]
 
